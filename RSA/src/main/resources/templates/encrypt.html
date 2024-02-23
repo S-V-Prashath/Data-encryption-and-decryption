@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption</title>
+
+    <!-- Include CSS for styling and animations -->
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #0056b3;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px 20px;
+            border-radius: 5px;
+            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #007BFF;
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+		
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Encryption</h1>
+        <form th:action="@{/savedata}">
+            <label for="your-mail">Your Mail:</label>
+            <input type="email"  name="semail" ><br>
+
+            <label for="receiver-mail">Receiver Mail:</label>
+            <input type="email" name="remail" ><br>
+
+            <label for="message">Message:</label>
+            <textarea name="msg" rows="4" required></textarea><br>
+
+            <button type="submit" onclick="display()">Encrypt</button>
+        </form>
+    </div>
+    <script>
+		function display(){
+			alert("Message encrypted and sent successfully");
+		}
+	</script>
+</body>
+</html>
